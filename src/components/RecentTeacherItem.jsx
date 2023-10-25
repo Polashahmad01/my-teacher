@@ -1,12 +1,20 @@
+import { useRecentTeacherItem } from "./hooks/useRecentTeacherItem"
+
 export const RecentTeacherItem = (props) => {
-  const { teacherName, imageUrl, subject } = props.teacher
+  const { 
+    fullName,
+    photo,
+    subject 
+  } = useRecentTeacherItem(props)
 
   return (
     <div className="flex items-center justify-between my-4">
-      <img className="h-12 w-12 block rounded-full" src={imageUrl} alt={teacherName} />
+      <div className="h-12 w-12 block rounded-full">
+        <img className="h-12 w-12 block rounded-full" src={photo} alt={fullName} />
+      </div>
       <div>
-        <p className="text-center font-medium">{teacherName}</p>
-        <p className=" text-sm">{subject}</p>
+        <p className="text-center font-medium">{fullName}</p>
+        <p className="text-sm text-center">{subject}</p>
       </div>
       <div>
         <svg className="text-3xl bi bi-telephone" xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" viewBox="0 0 16 16">

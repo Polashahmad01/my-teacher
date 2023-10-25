@@ -1,27 +1,27 @@
-import { useState } from "react"
-
+import { useHomeScreen } from "./hooks/useHomeScreen"
 import { TableOfTeachers } from "../components/TableOfTeachers"
 import { StudentDetails } from "../components/StudentDetails"
 import { RecentTeachersList } from "../components/RecentTeachersList"
-
-const studentData = {
-  type: "Student",
-  imageUrl: "https://pbs.twimg.com/profile_images/1637814189598154752/6QOMappK_400x400.jpg",
-  studentName: "Mark Johnson",
-  mobile: "Mobile",
-  mobileValue: "(12) 23 243 3445",
-  dateOfBirth: "Date Of Birth",
-  dateOfBirthValue: "21 Feb 1990",
-  email: "Email",
-  emailValue: "markjohnson@gmail.com",
-  country: "Country",
-  countryValue: "U.S.A",
-  subscription: "Premium",
-  subscriptionValue: "True"
-}
+import { LoadingSpinner } from "../components/LoadingSpinner"
+import { TeacherError } from "../components/TeacherError"
+import { StudentError } from "../components/StudentError"
+import { RecentTeacherError } from "../components/RecentTeacherError"
 
 export const HomeScreen = () => {
-  const [studentDetails, setStudentDetails] = useState(studentData)
+  const { 
+    teachersList,
+    studentData,
+    recentTeacherData,
+    showLoadingUIForTableOfTeacher,
+    showErrorUIForTableOfTeacher,
+    showUIForTableOfTeacher,
+    showLoadingUIForStudentDetails,
+    showErrorUIForStudentDetails,
+    showUIForStudentDetails,
+    showLoadingUIForRecentTeacher,
+    showErrorUIForRecentTeacher,
+    showUIForRecentTeacher,
+   } = useHomeScreen()
 
   return (
     <div className="-mt-6">
@@ -29,13 +29,19 @@ export const HomeScreen = () => {
       <div className="mt-4">
         <div className="flex justify-between">
           <div className="basis-8/12">
-            <TableOfTeachers />
+            {showLoadingUIForTableOfTeacher && <LoadingSpinner /> }
+            {showErrorUIForTableOfTeacher && <TeacherError />}
+            {showUIForTableOfTeacher && <TableOfTeachers teachersList={teachersList} />}
           </div>
           <div>
             <div className="w-full">
-              <StudentDetails studentInfo={studentDetails} />
+              {showLoadingUIForStudentDetails && <LoadingSpinner />}
+              {showErrorUIForStudentDetails && <StudentError />}
+              {showUIForStudentDetails && <StudentDetails studentInfo={studentData} />}
               <div className="mt-8">
-                <RecentTeachersList />
+                {showLoadingUIForRecentTeacher && <LoadingSpinner />}
+                {showErrorUIForRecentTeacher && <RecentTeacherError />}
+                {showUIForRecentTeacher && <RecentTeachersList recentTeacherData={recentTeacherData} />}
               </div>
             </div>
           </div>
