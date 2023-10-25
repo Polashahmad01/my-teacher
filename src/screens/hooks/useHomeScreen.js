@@ -23,6 +23,7 @@ export const useHomeScreen = () => {
       console.error("Error: ", error)
       setErrorMessage(error.code)
     }
+    setIsTeacherListLoading(false)
   }
 
     const fetchCurrentUser = async () => {
@@ -35,6 +36,7 @@ export const useHomeScreen = () => {
       console.error("Error: ", error)
       setErrorMessage(error.code)
     }
+    setIsStudentDataLoading(false)
   }
   
   const showLoadingUIForTableOfTeacher = isTeacherListLoading
@@ -59,6 +61,7 @@ export const useHomeScreen = () => {
       console.error("Error: ", error)
       setErrorMessage(error.code)
     }
+    setIsRecentTeacherDataLoading(false)
   }
 
   const seeFullListHandler = () => {
