@@ -18,7 +18,8 @@ export const Sidebar = () => {
         <div>
           <nav>
             <ul className="flex flex-col gap-8">
-              <li>
+              <li className="flex">
+                <div className="border-l-[10px] border-blue-500 rounded-tr-2xl rounded-br-2xl" />
                 <NavLink to="#">
                   <div className="flex gap-x-3.5 py-3 px-3 gap-4 ml-6">
                     <svg
@@ -33,7 +34,8 @@ export const Sidebar = () => {
                   </div>
                 </NavLink>
               </li>
-              <li>
+              <li className="flex">
+                <div className="border-l-[10px] border-transparent rounded-tr-2xl rounded-br-2xl"/>
                 <NavLink to="#">
                   <div className="flex gap-x-3.5 py-3 px-3 gap-4 ml-6">
                     <svg
@@ -48,7 +50,8 @@ export const Sidebar = () => {
                   </div>
                 </NavLink>
               </li>
-              <li>
+              <li className="flex">
+                <div className="border-l-[10px] border-transparent rounded-tr-2xl rounded-br-2xl"/>
                 <NavLink to="#">
                   <div className="flex gap-x-3.5 py-3 px-3 gap-4 ml-6">
                     <svg
