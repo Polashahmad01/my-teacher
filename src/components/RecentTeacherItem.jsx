@@ -1,4 +1,5 @@
 import { useRecentTeacherItem } from "./hooks/useRecentTeacherItem"
+import { ImageDecoder } from "./ImageDecoder"
 
 export const RecentTeacherItem = (props) => {
   const { 
@@ -10,7 +11,11 @@ export const RecentTeacherItem = (props) => {
   return (
     <div className="flex items-center justify-between my-4">
       <div className="h-12 w-12 block rounded-full">
-        <img className="h-12 w-12 block rounded-full" src={photo} alt={fullName} />
+        <ImageDecoder
+          base64String={photo}
+          altName={fullName}
+          size="small"
+        />
       </div>
       <div>
         <p className="text-center font-medium">{fullName}</p>

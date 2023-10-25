@@ -1,5 +1,5 @@
 export const useStudentDetails = (props) => {
-  const { firstName, lastName, mobile, email, premium, country, dateOfBirth } = props.studentInfo
+  const { firstName, lastName, mobile, email, premium, country, dateOfBirth, photo } = props.studentInfo
 
   const fullName = firstName + " " + lastName
 
@@ -23,6 +23,7 @@ export const useStudentDetails = (props) => {
     email,
     premium,
     country,
-    formattedDateOfBirth
+    formattedDateOfBirth,
+    photo
   }
 }

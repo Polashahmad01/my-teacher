@@ -76,8 +76,6 @@ export const useHomeScreen = () => {
     showUIForStudentDetails,
     showLoadingUIForRecentTeacher,
     showErrorUIForRecentTeacher,
-    showUIForRecentTeacher,
-    isLoading,
-    errorMessage
+    showUIForRecentTeacher
   }
 }

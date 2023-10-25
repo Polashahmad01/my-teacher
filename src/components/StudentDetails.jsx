@@ -1,4 +1,5 @@
 import { useStudentDetails } from "./hooks/useStudentDetails"
+import { ImageDecoder } from "./ImageDecoder"
 
 export const StudentDetails = (props) => {
   const { 
@@ -7,7 +8,8 @@ export const StudentDetails = (props) => {
     email,
     premium,
     country,
-    formattedDateOfBirth 
+    formattedDateOfBirth,
+    photo
   } = useStudentDetails(props)
 
   return (
@@ -15,7 +17,10 @@ export const StudentDetails = (props) => {
       <span className="bg-[#3359C1] text-white px-6 py-2 rounded-full text-xs absolute -top-4 left-36">Student</span>
       <div>
         <div className="h-20 w-20 row-span-full block m-auto mb-3">
-          <img className="h-20 w-20 block m-auto mb-3 rounded-full" src="https://pbs.twimg.com/profile_images/1361485713905123330/bVOw5zgC_400x400.jpg" alt="" />
+          <ImageDecoder
+            base64String={photo}
+            altName={fullName}
+          />
         </div>
         <h2 className="text-center mb-3 font-medium">{fullName}</h2>
       </div>
