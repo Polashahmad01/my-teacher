@@ -1,6 +1,7 @@
 import axios from "axios"
 
-const token = "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJlN2Q5NzM4ZS0wNzY0LTRmY2QtYmU0OC0xYzc5OGE1YzViYWQiLCJhdXRoZW50aWNhdGVkIjoidHJ1ZSIsInNjb3BlIjoiU1RVREVOVCBBRE1JTiBURUFDSEVSICIsImlhdCI6MTY5ODI2NDQ1OSwiZXhwIjoxNjk4MjY2MjU5fQ.c2k5JS5NFT7Aax50OF29zc7bm1fsxJ2v0c1dQkmwfn8"
+const token = "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJlN2Q5NzM4ZS0wNzY0LTRmY2QtYmU0OC0xYzc5OGE1YzViYWQiLCJhdXRoZW50aWNhdGVkIjoidHJ1ZSIsInNjb3BlIjoiU1RVREVOVCBBRE1JTiBURUFDSEVSICIsImlhdCI6MTY5ODI2ODQzNCwiZXhwIjoxNjk4MjcwMjM0fQ.E-B8i20CriVuxZNgKxA61yqONQfZ_-5Gt3eq_mKkg1w"
+
 
 const instance = axios.create({
   baseURL: "https://myteacher.at",

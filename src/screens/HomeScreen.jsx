@@ -11,7 +11,7 @@ export const HomeScreen = () => {
   const { 
     teachersList,
     studentData,
-    recentTeacherData,
+    recentTeacherDataToShow,
     showLoadingUIForTableOfTeacher,
     showErrorUIForTableOfTeacher,
     showUIForTableOfTeacher,
@@ -21,6 +21,8 @@ export const HomeScreen = () => {
     showLoadingUIForRecentTeacher,
     showErrorUIForRecentTeacher,
     showUIForRecentTeacher,
+    showFullRecentTeacherData,
+    seeFullListHandler
    } = useHomeScreen()
 
   return (
@@ -41,7 +43,7 @@ export const HomeScreen = () => {
               <div className="mt-8">
                 {showLoadingUIForRecentTeacher && <LoadingSpinner />}
                 {showErrorUIForRecentTeacher && <RecentTeacherError />}
-                {showUIForRecentTeacher && <RecentTeachersList recentTeacherData={recentTeacherData} />}
+                {showUIForRecentTeacher && <RecentTeachersList recentTeacherData={recentTeacherDataToShow} onSeeFullListHandler={seeFullListHandler} showFullRecentTeacherData={showFullRecentTeacherData} />}
               </div>
             </div>
           </div>

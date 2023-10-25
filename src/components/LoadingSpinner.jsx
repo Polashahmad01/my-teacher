@@ -1,8 +1,8 @@
 export const LoadingSpinner = () => {
 
   return (
-    <div>
-      <h1 className="font-bold text-3xl text-[#1542B9] text-center">Loading...</h1>
+    <div className="flex justify-center items-center h-full">
+      <div className="animate-spin rounded-full h-12 w-12 border-t-4 border-blue-500"></div>
     </div>
   )
 }

@@ -8,6 +8,8 @@ export const useHomeScreen = () => {
   const [recentTeacherData, setRecentTeacherData] = useState([])
   const [isLoading, setIsLoading] = useState(false)
   const [errorMessage, setErrorMessage] = useState(null)
+  const [showFullRecentTeacherData, setShowFullRecentTeacherData] = useState(false)
+  const recentTeacherDataToShow = showFullRecentTeacherData ? recentTeacherData : recentTeacherData.slice(0, 5)
 
   const fetchOrderData = async () => {
     try {
@@ -58,6 +60,10 @@ export const useHomeScreen = () => {
     }
   }
 
+  const seeFullListHandler = () => {
+    setShowFullRecentTeacherData(!showFullRecentTeacherData)
+  }
+
   useEffect(() => {
     fetchOrderData()
     fetchCurrentUser()
@@ -67,7 +73,7 @@ export const useHomeScreen = () => {
   return {
     teachersList,
     studentData,
-    recentTeacherData,
+    recentTeacherDataToShow,
     showLoadingUIForTableOfTeacher,
     showErrorUIForTableOfTeacher,
     showUIForTableOfTeacher,
@@ -76,6 +82,8 @@ export const useHomeScreen = () => {
     showUIForStudentDetails,
     showLoadingUIForRecentTeacher,
     showErrorUIForRecentTeacher,
-    showUIForRecentTeacher
+    showUIForRecentTeacher,
+    showFullRecentTeacherData,
+    seeFullListHandler
   }
 }
