@@ -1,7 +1,7 @@
 
 export const Header = () => {
   return (
-    <div className="bg-[#FFFFFF] flex justify-between items-center px-10 py-4 border-b w-full">
+    <div className="bg-[#FFFFFF] flex justify-between items-center px-10 py-4 border-b w-full sticky top-0 z-50">
       <div>
         <form>
           <div className="flex justify-center items-center relative">

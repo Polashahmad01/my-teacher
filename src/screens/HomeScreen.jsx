@@ -27,7 +27,7 @@ export const HomeScreen = () => {
 
   return (
     <div className="-mt-6">
-      <h1 className="font-bold text-2xl">Order List</h1>
+      <h1 className="font-bold text-2xl my-2">Order List</h1>
       <div className="mt-4">
         <div className="flex justify-between">
           <div className="basis-8/12">
